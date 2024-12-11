@@ -1,4 +1,4 @@
-import { FlatList } from "react-native"
+import { FlatList, View } from "react-native"
 
 import { s } from "./styles"
 import { Category } from "../category"
@@ -16,7 +16,8 @@ type Props = {
 
 export function Categories({ data, selected, onSelect }: Props) {
   return (
-    <FlatList
+<View>
+<FlatList
       data={data}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
@@ -32,5 +33,7 @@ export function Categories({ data, selected, onSelect }: Props) {
       contentContainerStyle={s.content}
       style={s.container}
     />
+</View>
+
   )
 }
